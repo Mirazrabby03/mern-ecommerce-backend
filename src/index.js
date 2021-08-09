@@ -9,7 +9,7 @@ const cors = require('cors');
 //environmental variable 
 env.config();  
 //mongoDB connection
-//mongodb+srv://root:<password>@cluster0.5z7fm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+// mongodb+srv://root:<password>@cluster0.5z7fm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 mongoose.connect(
     `mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0.5z7fm.mongodb.net/${process.env.MONGO_DB_DATABASE}?retryWrites=true&w=majority`,
 {
@@ -17,7 +17,7 @@ mongoose.connect(
     useUnifiedTopology:true,
     useCreateIndex:true
 }).then(() =>{
-    console.log(`connection successful`);
+    console.log(`connection successful atlas`);
 }).catch((e) =>{
     console.log(`no connection`);
 })
