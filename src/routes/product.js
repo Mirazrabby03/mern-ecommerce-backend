@@ -1,6 +1,6 @@
 const express = require('express');
 const {requireSignin, adminMiddleware} =require('../common-middleware');
-const { createProduct, getProductsBySlug, getProductDetailsById } = require('../controller/product');
+const { createProduct, getProductsBySlug, getProductDetailsById, getProducts } = require('../controller/product');
 const multer = require('multer');
 
 const path = require('path');
@@ -21,5 +21,6 @@ router.post('/product/create', requireSignin, adminMiddleware, upload.array('pro
 router.get('/products/:slug', getProductsBySlug);
 router.get('/product/:productId', getProductDetailsById);
 //router.get('/category/getcategory', getCategories); 
- 
-module.exports = router;        
+ router.post("/product/getProducts", requireSignin,adminMiddleware,getProducts);
+
+ module.exports = router;        
